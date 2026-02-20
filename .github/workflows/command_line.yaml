@@ -26,7 +26,7 @@ jobs:
         run: pip install . 
       
       - name: Run tests
-        run: cowsay "${{ github.event.inputs.message }}"
+        run: cowsay "${{ github.event.inputs.message || 'moo' }}"
           # everything that we put in here is a terminal command
           # the behavior on github actions will be basically the same
           # as the behavior in the terminal on your own computer
