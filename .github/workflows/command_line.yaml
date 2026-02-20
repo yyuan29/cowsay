@@ -16,9 +16,9 @@ jobs:
         python: [3.11]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Python ${{matrix.python}}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: ${{matrix.python}}
       
@@ -28,7 +28,7 @@ jobs:
           python -m pip install . 
       
       - name: Run tests
-        run: cowsay "${{ github.event.inputs.message || 'moo' }}"
+        run: |
           # everything that we put in here is a terminal command
           # the behavior on github actions will be basically the same
           # as the behavior in the terminal on your own computer
