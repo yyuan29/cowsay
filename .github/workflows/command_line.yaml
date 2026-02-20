@@ -1,0 +1,29 @@
+name: command_line
+on:
+  push:
+    branches: ['*']
+jobs:
+  tests:
+    strategy:
+      matrix:
+        python: [3.11]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{matrix.python}}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{matrix.python}}
+      
+      - name: Install cowsay package
+        run: pip install . 
+      
+      - name: Run tests
+        run: |
+          # everything that we put in here is a terminal command
+          # the behavior on github actions will be basically the same
+          # as the behavior in the terminal on your own computer
+
+          # the line below fails right now because cowsay has not been installed
+          # run `pip3 install .` to install cowsay to fix this problem
+          cowsay 'moo'
