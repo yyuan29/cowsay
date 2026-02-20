@@ -19,12 +19,12 @@ jobs:
 
       - name: Install cowsay package
         run: pip install .
-
-      - name: Run tests
-        run: python -m cowsay 'moo'
           # everything that we put in here is a terminal command
           # the behavior on github actions will be basically the same
           # as the behavior in the terminal on your own computer
-
           # the line below fails right now because cowsay has not been installed
           # run `pip3 install .` to install cowsay to fix this problem 
+      - name: Run tests
+        run: python -m cowsay 'moo'
+          
+      
