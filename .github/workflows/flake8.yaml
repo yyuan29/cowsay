@@ -1,11 +1,11 @@
 name: flake8
-on: push
+on: [push]
     
 jobs:
   tests:
     strategy:
       matrix:
-        python: [3.11]
+        python-version: [3.11]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,4 +20,4 @@ jobs:
           if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
      
       - name: Run tests
-        run: flake8 .  --ignore=E501
+        run: python -m flake8 .  --ignore=E501
