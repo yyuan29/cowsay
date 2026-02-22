@@ -8,7 +8,7 @@ def cowsay(text, width=40):
     max_len = max(len(line) for line in wrapped)
     # Build speech bubble
     lines = []
-    lines.append(" "+"_"*(max_len + 2))
+    lines.append(" " + "_"*(max_len + 2))
     if len(wrapped) == 1:
         lines.append(f"|{wrapped[0].ljust(max_len)}|")
     else:
@@ -19,7 +19,7 @@ def cowsay(text, width=40):
                 lines.append(f"\\ {line.ljust(max_len)} /")
             else:
                 lines.append(f"| {line.ljust(max_len)} |")
-    lines.append(""+""*(max_len + 2))
+    lines.append("" + "" * (max_len + 2))
     # Add cow
     cow = r"""        \   ^__^
          \  (oo)\_______
