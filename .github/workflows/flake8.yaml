@@ -1,7 +1,6 @@
 name: flake8
-on:
-  push:
-    branches: ['*']
+on: push
+    
 jobs:
   tests:
     strategy:
