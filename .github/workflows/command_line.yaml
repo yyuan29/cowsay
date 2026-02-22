@@ -1,5 +1,4 @@
 name: command_line
-name: command_line
 on:
   push:
     branches: ['*']
